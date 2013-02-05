@@ -11,6 +11,12 @@ public class Fibonacci {
 	// Returns the nth fibonnaci number, assuming 0 is the 0th 
 	// fibonnaci number in the sequence
 	private int calculate(int nthNum) {
-		return 0;
+		int[] dp = new int[nthNum+1];
+		dp[0] = 0;
+		dp[1] = 1;
+		for (int i = 2; i <= nthNum; i++) {
+			dp[i] = dp[i-1] + dp[i-2];
+		}
+		return dp[nthNum];
 	}
 }
